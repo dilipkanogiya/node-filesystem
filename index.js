@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const moment = require('moment');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the PORT environment variable or default to 3000
 
 // Endpoint to create a text file with the current timestamp
 app.post('/create-file', (req, res) => {
@@ -29,5 +29,5 @@ app.get('/files', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at https://node-filesystem-kugr.onrender.com:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
